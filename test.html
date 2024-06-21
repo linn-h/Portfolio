@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+    <title> Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .heading,
+        .cover,
+        .about_me {
+            width: 100%;
+            height: 100%;
+        }
+
+        .left,
+        .right {
+            width: 50%;
+            position: relative;
+        }
+
+        .title {
+            width: 100px;
+            height: 60px;
+            border: 2px solid black;
+            display: block;
+            float: left;
+            margin-left: 75px;
+            margin-top: 10px;
+        }
+
+        .title i {
+            font-size: 35px;
+            color: white;
+            margin-left: 33px;
+        }
+
+        .nav_links {
+            width: 525px;
+            height: 60px;
+            border: 2px solid black;
+            margin-left: 750px;
+        }
+
+        .nav_links li {
+            display: inline-block;
+            position: relative;
+            margin-left: 50px;
+            margin-top: 19px;
+            color: .0087ca;
+            text-transform: uppercase;
+        }
+
+        .nav_links li:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: whitesmoke;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav_links li:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .nav_links a {
+            color: gray;
+            text-decoration: none;
+        }
+
+        .nav_links a:hover {
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .main {
+            width: 100%;
+            height: 350px;
+            /* border: 2px solid white; */
+        }
+
+        .typewriter {
+            color: white;
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-left: 250px;
+            margin-top: 200px;
+            overflow: hidden;
+            border-right: .15em solid white;
+            white-space: nowrap;
+            width: 0;
+            animation:
+                typing 1.5s steps(25, end) forwards,
+                blink .8s infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: max-content
+            }
+        }
+
+        @keyframes blink {
+            from {
+                border-color: transparent
+            }
+
+            to {
+                border-color: white;
+            }
+        }
+
+        @keyframes panUp {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(4%);
+            }
+        }
+
+        .cover {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: max-content;
+            background-color: white;
+            animation: panUp 1.5s forwards, startListTypewriter 1.5s forwards;
+            /* Add the cover animation here */
+            z-index: 2;
+        }
+
+        @keyframes startListTypewriter {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .about_me {
+            display: grid;
+            position: relative;
+            grid-template-columns: auto 450px;
+            align-items: center;
+            width: 100%;
+            height: 500px;
+            gap: 20%;
+        }
+
+        .about {
+            margin-left: 20%;
+        }
+
+        .about h1 {
+            font-size: 40px;
+            line-height: 70px;
+            text-transform: uppercase;
+            margin-left: 39px;
+        }
+
+        .about li {
+            border-bottom: 1px dashed;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            list-style: none;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            /* Add fadeIn animation */
+        }
+
+        .about li:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        @keyframes startListTypewriter {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .about_me2 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 100%;
+            height: 450px;
+            right: 20%;
+        }
+
+        .abt_pic {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            display: flex;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .abt_pic img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .circle {
+            width: 85%;
+            height: 85%;
+            right: 22%;
+            position: absolute;
+            border-style: solid;
+            border-radius: 50%;
+            border-width: 0 0 3px 3px;
+            animation: circleAnimation 10s linear infinite;
+        }
+
+        @keyframes circleAnimation {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .round {
+            width: 2rem;
+            height: 2rem;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            right: 185px;
+            top: -14px;
+            box-shadow: 0 0 1rem rgb(41, 41, 41);
+        }
+
+        .skills {
+            width: 100%;
+            height: 450px;
+            position: relative;
+        }
+
+        .s_head {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .my_skills {
+            width: 60%;
+            margin-left: 20%;
+        }
+
+        .my_skills .skill_ {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .my_skills p {
+            display: flex;
+            text-transform: uppercase;
+            width: 30%;
+        }
+
+        .my_skills h4 {
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+            position: relative;
+            margin-top: 12px;
+            background-color: #f06529;
+        }
+
+        .my_skills h4::after {
+            position: absolute;
+            content: '';
+            left: -4px;
+            top: 12px;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            background-color: #f06529;
+        }
+
+        .my_skills .skill_:nth-child(3) h4::after,
+        .my_skills .skill_:nth-child(3) h4 {
+            background-color: #2965f1;
+        }
+
+        .my_skills .skill_:nth-child(4) h4::after,
+        .my_skills .skill_:nth-child(4) h4 {
+            background-color: #f0db4f;
+        }
+
+        .my_skills .skill_:nth-child(5) h4::after,
+        .my_skills .skill_:nth-child(5) h4 {
+            background: linear-gradient(#306998, #ffde57);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .my_skills .bar_ {
+            width: 60%;
+            background-color: black;
+            height: 5px;
+            margin-top: 30px;
+            margin-right: 20px;
+        }
+
+        .my_skills .line_bar {
+            animation: bar 2.8s;
+            height: 5px;
+            background: #f06529;
+            width: 65%;
+        }
+
+        .my_skills .two {
+            width: 45%;
+            background-color: #2965f1;
+        }
+
+        .my_skills .three {
+            width: 7%;
+            background-color: #f0db4f;
+        }
+
+        .my_skills .four {
+            width: 50%;
+            background: linear-gradient(#306998, #ffde57);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes bar {
+            0% {
+                width: 0%;
+            }
+        }
+
+        .timeline {
+            margin-top: 25px;
+        }
+
+        .timeline ul li {
+            list-style-type: none;
+            position: relative;
+            width: 6px;
+            margin: 0 auto;
+            padding-top: 50px;
+            background: black;
+        }
+
+        .timeline ul li::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%) rotate(45deg);
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+            background: rgb(19, 17, 17);
+        }
+
+        .timeline ul li div {
+            position: relative;
+            bottom: 0;
+            width: 400px;
+            padding: 20px;
+            background: white;
+            box-shadow: 4px 13px 30px 1px rgba(5, 5, 5, 0.2);
+            border-radius: 5px;
+            border: 3px solid black;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline ul li div time {
+            position: absolute;
+            background: #f5af19;
+            width: 80px;
+            height: 30px;
+            top: -15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 2px;
+        }
+
+        .timeline ul li div div {
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timeline ul li div div p {
+            text-align: center;
+        }
+
+        .timeline ul li div.discovery {
+            margin-right: 10px;
+        }
+
+        .timeline ul li:nth-of-type(odd)>div {
+            left: 45px;
+        }
+
+        .timeline ul li:nth-of-type(even)>div {
+            left: -439px;
+        }
+
+        .timeline ul li div {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .timeline ul li:nth-of-type(odd) div {
+            transform: translate3d(100px, -10px, 0) rotate(10deg);
+        }
+
+        .timeline ul li:nth-of-type(even) div {
+            transform: translate3d(-100px, -10px, 0) rotate(10deg);
+        }
+
+        .timeline ul li.in-view>div {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .t_head {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 900px) {
+            .timeline ul li div {
+                width: 250px;
+                flex-direction: column;
+            }
+
+            .timeline ul li div div {
+                width: 80%;
+                margin: 10px;
+            }
+
+            .timeline ul li:nth-of-type(even)>div {
+                left: -289px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline ul li {
+                margin-left: 20px;
+            }
+
+            .timeline ul li div {
+                width: calc(100vw - 91px);
+            }
+
+            .timeline ul li:nth-of-type(even)>div {
+                left: 45px;
+            }
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            color: black;
+            border: 3px solid black;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style the container/contact section */
+        .contact {
+            border-radius: 5px;
+            background-color: white;
+            padding: 10px;
+        }
+
+        /* Create two columns that float next to eachother */
+        .column {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+            padding: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .column,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <div class="title">
+            <h2><i class="bi bi-h-square-fill"></i></h2>
+        </div>
+        <div class="nav_links">
+            <ul>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="#about"> About</a></li>
+                <li><a href="#"> Services</a></li>
+                <li><a href="#"> Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="typewriter">
+
+        </div>
+    </div>
+
+    <div class="cover">
+        <div class="about_me left">
+            <div class="about">
+                <h1> About me</h1>
+                <ul>
+                    <li> </li>
+                    <li> </li>
+                    <li> </li>
+                    <li> </li>
+                    <li> </li>
+                </ul>
+            </div>
+            <div class="about_me2 right">
+                <div class="abt_pic">
+                    <img src="image.jpg" alt="profile_picture">
+                </div>
+                <div class="circle">
+                    <div class="round">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills">
+            <div class="my_skills">
+                <div class="s_head">
+                    <h1> My Current Skills</h1>
+                </div>
+                <div class="skill_">
+                    <p> HTML</p>
+                    <div class="bar_">
+                        <div class="line_bar one">
+
+                        </div>
+                    </div>
+                    <h4> 65</h4>
+                </div>
+
+                <div class="skill_">
+                    <p> CSS</p>
+                    <div class="bar_">
+                        <div class="line_bar two">
+
+                        </div>
+                    </div>
+                    <h4> 45</h4>
+                </div>
+
+                <div class="skill_">
+                    <p> JavaScript</p>
+                    <div class="bar_">
+                        <div class="line_bar three">
+
+                        </div>
+                    </div>
+                    <h4> 7</h4>
+                </div>
+
+                <div class="skill_">
+                    <p> Python</p>
+                    <div class="bar_">
+                        <div class="line_bar four">
+
+                        </div>
+                    </div>
+                    <h4> 50</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="t_head">
+                <h1> Timeline of my learning</h1>
+            </div>
+            <ul>
+                <li>
+                    <div class="html">
+                        <time> 2022</time>
+                        <p> Started learning HTML</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="css">
+                        <time> 2022</time>
+                        <p> Started learning CSS</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="js">
+                        <time> 2023</time>
+                        <p> Started learning JavaScript</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="python">
+                        <time> 2023</time>
+                        <p> Started learning Python</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact">
+            <div style="text-align: center; margin-top:75px;">
+                <h1> Contact Me</h1>
+                <p> Maybe?</p>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <img src="darksouls.jpg" style="width:100%">
+                </div>
+                <div class="column">
+                    <form action="response.html">
+                        <label for="fname"> First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <label for="lname"> Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        <label for="country"> Country</label>
+                        <select id="country" name="country">
+                            <option value="afghanistan">Afghanistan</option>
+                            <option value="albania">Albania</option>
+                            <option value="algeria">Algeria</option>
+                            <option value="andorra">Andorra</option>
+                            <option value="angola">Angola</option>
+                            <option value="antigua_and_barbuda">Antigua and Barbuda</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="armenia">Armenia</option>
+                            <option value="australia">Australia</option>
+                            <option value="austria">Austria</option>
+                            <option value="azerbaijan">Azerbaijan</option>
+                            <option value="bahamas">Bahamas</option>
+                            <option value="bahrain">Bahrain</option>
+                            <option value="bangladesh">Bangladesh</option>
+                            <option value="barbados">Barbados</option>
+                            <option value="belarus">Belarus</option>
+                            <option value="belgium">Belgium</option>
+                            <option value="belize">Belize</option>
+                            <option value="benin">Benin</option>
+                            <option value="bhutan">Bhutan</option>
+                            <option value="bolivia">Bolivia</option>
+                            <option value="bosnia_and_herzegovina">Bosnia and Herzegovina</option>
+                            <option value="botswana">Botswana</option>
+                            <option value="brazil">Brazil</option>
+                            <option value="brunei">Brunei</option>
+                            <option value="bulgaria">Bulgaria</option>
+                            <option value="burkina_faso">Burkina Faso</option>
+                            <option value="burundi">Burundi</option>
+                            <option value="cabo_verde">Cabo Verde</option>
+                            <option value="cambodia">Cambodia</option>
+                            <option value="cameroon">Cameroon</option>
+                            <option value="canada">Canada</option>
+                            <option value="central_african_republic">Central African Republic</option>
+                            <option value="chad">Chad</option>
+                            <option value="chile">Chile</option>
+                            <option value="china">China</option>
+                            <option value="colombia">Colombia</option>
+                            <option value="comoros">Comoros</option>
+                            <option value="congo">Congo</option>
+                            <option value="costa_rica">Costa Rica</option>
+                            <option value="croatia">Croatia</option>
+                            <option value="cuba">Cuba</option>
+                            <option value="cyprus">Cyprus</option>
+                            <option value="czech_republic">Czech Republic</option>
+                            <option value="denmark">Denmark</option>
+                            <option value="djibouti">Djibouti</option>
+                            <option value="dominica">Dominica</option>
+                            <option value="dominican_republic">Dominican Republic</option>
+                            <option value="east_timor">East Timor</option>
+                            <option value="ecuador">Ecuador</option>
+                            <option value="egypt">Egypt</option>
+                            <option value="el_salvador">El Salvador</option>
+                            <option value="equatorial_guinea">Equatorial Guinea</option>
+                            <option value="eritrea">Eritrea</option>
+                            <option value="estonia">Estonia</option>
+                            <option value="eswatini">Eswatini</option>
+                            <option value="ethiopia">Ethiopia</option>
+                            <option value="fiji">Fiji</option>
+                            <option value="finland">Finland</option>
+                            <option value="france">France</option>
+                            <option value="gabon">Gabon</option>
+                            <option value="gambia">Gambia</option>
+                            <option value="georgia">Georgia</option>
+                            <option value="germany">Germany</option>
+                            <option value="ghana">Ghana</option>
+                            <option value="greece">Greece</option>
+                            <option value="grenada">Grenada</option>
+                            <option value="guatemala">Guatemala</option>
+                            <option value="guinea">Guinea</option>
+                            <option value="guinea-bissau">Guinea-Bissau</option>
+                            <option value="guyana">Guyana</option>
+                            <option value="haiti">Haiti</option>
+                            <option value="honduras">Honduras</option>
+                            <option value="hungary">Hungary</option>
+                            <option value="iceland">Iceland</option>
+                            <option value="india">India</option>
+                            <option value="indonesia">Indonesia</option>
+                            <option value="iran">Iran</option>
+                            <option value="iraq">Iraq</option>
+                            <option value="ireland">Ireland</option>
+                            <option value="israel">Israel</option>
+                            <option value="italy">Italy</option>
+                            <option value="ivory_coast">Ivory Coast</option>
+                            <option value="jamaica">Jamaica</option>
+                            <option value="japan">Japan</option>
+                            <option value="jordan">Jordan</option>
+                            <option value="kazakhstan">Kazakhstan</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="kiribati">Kiribati</option>
+                            <option value="kosovo">Kosovo</option>
+                            <option value="kuwait">Kuwait</option>
+                            <option value="kyrgyzstan">Kyrgyzstan</option>
+                            <option value="laos">Laos</option>
+                            <option value="latvia">Latvia</option>
+                            <option value="lebanon">Lebanon</option>
+                            <option value="lesotho">Lesotho</option>
+                            <option value="liberia">Liberia</option>
+                            <option value="libya">Libya</option>
+                            <option value="liechtenstein">Liechtenstein</option>
+                            <option value="lithuania">Lithuania</option>
+                            <option value="luxembourg">Luxembourg</option>
+                            <option value="madagascar">Madagascar</option>
+                            <option value="malawi">Malawi</option>
+                            <option value="malaysia">Malaysia</option>
+                            <option value="maldives">Maldives</option>
+                            <option value="mali">Mali</option>
+                            <option value="malta">Malta</option>
+                            <option value="marshall_islands">Marshall Islands</option>
+                            <option value="mauritania">Mauritania</option>
+                            <option value="mauritius">Mauritius</option>
+                            <option value="mexico">Mexico</option>
+                            <option value="micronesia">Micronesia</option>
+                            <option value="moldova">Moldova</option>
+                            <option value="monaco">Monaco</option>
+                            <option value="mongolia">Mongolia</option>
+                            <option value="montenegro">Montenegro</option>
+                            <option value="morocco">Morocco</option>
+                            <option value="mozambique">Mozambique</option>
+                            <option value="myanmar">Myanmar</option>
+                            <option value="namibia">Namibia</option>
+                            <option value="nauru">Nauru</option>
+                            <option value="nepal">Nepal</option>
+                            <option value="netherlands">Netherlands</option>
+                            <option value="new_zealand">New Zealand</option>
+                            <option value="nicaragua">Nicaragua</option>
+                            <option value="niger">Niger</option>
+                            <option value="nigeria">Nigeria</option>
+                            <option value="north_korea">North Korea</option>
+                            <option value="north_macedonia">North Macedonia</option>
+                            <option value="norway">Norway</option>
+                            <option value="oman">Oman</option>
+                            <option value="pakistan">Pakistan</option>
+                            <option value="palau">Palau</option>
+                            <option value="panama">Panama</option>
+                            <option value="papua_new_guinea">Papua New Guinea</option>
+                            <option value="paraguay">Paraguay</option>
+                            <option value="peru">Peru</option>
+                            <option value="philippines">Philippines</option>
+                            <option value="poland">Poland</option>
+                            <option value="portugal">Portugal</option>
+                            <option value="qatar">Qatar</option>
+                            <option value="romania">Romania</option>
+                            <option value="russia">Russia</option>
+                            <option value="rwanda">Rwanda</option>
+                            <option value="saint_kitts_and_nevis">Saint Kitts and Nevis</option>
+                            <option value="saint_lucia">Saint Lucia</option>
+                            <option value="saint_vincent_and_the_grenadines">Saint Vincent and the Grenadines</option>
+                            <option value="samoa">Samoa</option>
+                            <option value="san_marino">San Marino</option>
+                            <option value="sao_tome_and_principe">Sao Tome and Principe</option>
+                            <option value="saudi_arabia">Saudi Arabia</option>
+                            <option value="senegal">Senegal</option>
+                            <option value="serbia">Serbia</option>
+                            <option value="seychelles">Seychelles</option>
+                            <option value="sierra_leone">Sierra Leone</option>
+                            <option value="singapore">Singapore</option>
+                            <option value="slovakia">Slovakia</option>
+                            <option value="slovenia">Slovenia</option>
+                            <option value="solomon_islands">Solomon Islands</option>
+                            <option value="somalia">Somalia</option>
+                            <option value="south_africa">South Africa</option>
+                            <option value="south_korea">South Korea</option>
+                            <option value="south_sudan">South Sudan</option>
+                            <option value="spain">Spain</option>
+                            <option value="sri_lanka">Sri Lanka</option>
+                            <option value="sudan">Sudan</option>
+                            <option value="suriname">Suriname</option>
+                            <option value="sweden">Sweden</option>
+                            <option value="switzerland">Switzerland</option>
+                            <option value="syria">Syria</option>
+                            <option value="taiwan">Taiwan</option>
+                            <option value="tajikistan">Tajikistan</option>
+                            <option value="tanzania">Tanzania</option>
+                            <option value="thailand">Thailand</option>
+                            <option value="togo">Togo</option>
+                            <option value="tonga">Tonga</option>
+                            <option value="trinidad_and_tobago">Trinidad and Tobago</option>
+                            <option value="tunisia">Tunisia</option>
+                            <option value="turkey">Turkey</option>
+                            <option value="turkmenistan">Turkmenistan</option>
+                            <option value="tuvalu">Tuvalu</option>
+                            <option value="uganda">Uganda</option>
+                            <option value="ukraine">Ukraine</option>
+                            <option value="united_arab_emirates">United Arab Emirates</option>
+                            <option value="united_kingdom">United Kingdom</option>
+                            <option value="united_states">United States</option>
+                            <option value="uruguay">Uruguay</option>
+                            <option value="uzbekistan">Uzbekistan</option>
+                            <option value="vanuatu">Vanuatu</option>
+                            <option value="vatican_city">Vatican City</option>
+                            <option value="venezuela">Venezuela</option>
+                            <option value="vietnam">Vietnam</option>
+                            <option value="yemen">Yemen</option>
+                            <option value="zambia">Zambia</option>
+                            <option value="zimbabwe">Zimbabwe</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."
+                            style="height:170px"></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            var typewriter = document.querySelector(".typewriter");
+            var cover = document.querySelector(".cover");
+            var aboutSection = document.querySelector(".about_me");
+            var skillsSection = document.querySelector(".skills");
+
+            // Start the first typewriter animation
+            startTypewriterEffect();
+
+            // Get the duration of the typewriter animation
+            var animationDuration = parseFloat(window.getComputedStyle(typewriter).animationDuration) * 10500;
+
+            // After the first typewriter animation ends, show the cover
+            setTimeout(function () {
+                cover.style.display = "block";
+                cover.style.animationPlayState = "running";
+
+                // Start the list typewriter animation when the cover animation starts
+                startListTypewriterEffect();
+
+                // Start the skills section animation after the about section animation ends
+                setTimeout(function () {
+                    aboutSection.style.animationPlayState = "paused"; // Pause the about section animation
+                    skillsSection.style.animationPlayState = "running";
+                }, animationDuration + 1500); // Adjust the delay according to your preference
+            }, animationDuration - 50); // Add an extra delay to ensure the first typewriter animation finishes before showing the cover
+        });
+
+        // Function to start first typewriter effect
+        function startTypewriterEffect() {
+            var textContainer = document.querySelector('.typewriter');
+            var texts = [
+                "Hello there.",
+                "My name is Harry.",
+                "And here's about me."
+            ];
+            var textIndex = 0;
+
+            function type() {
+                var text = texts[textIndex];
+                var characters = text.split('');
+                var charIndex = 0;
+                var typingInterval = setInterval(function () {
+                    if (charIndex < characters.length) {
+                        textContainer.textContent += characters[charIndex];
+                        charIndex++;
+                    } else {
+                        clearInterval(typingInterval);
+                        setTimeout(function () {
+                            textContainer.textContent = '';
+                            textIndex = (textIndex + 1) % texts.length;
+                            type();
+                        }, 3000);
+                    }
+                }, 150);
+            }
+            type();
+        }
+
+        // Function to start typewriter effect for list items
+        function startListTypewriterEffect() {
+            var textContainers = document.querySelectorAll('.about li');
+
+            // Define the texts to be displayed for each list item
+            var listTexts = [
+                "Name: Khant Zayar Linn@Harry",
+                "Age: 15",
+                "Email: khantzayarlinn09@gmail.com",
+                "From: Myanmar (Burma)",
+                "Experience: 8 months"
+            ];
+
+            var totalDelay = 0;
+            // Loop through each list item
+            textContainers.forEach(function (textContainer, index) {
+                // Get the corresponding text for the current list item
+                var text = listTexts[index];
+
+                // Calculate the typing duration for the current list item
+                var typingDuration = text.length * 50; // Faster typing speed for the second typewriter (milliseconds)
+
+                // Initialize typewriter effect for the current list item with delay
+                setTimeout(function () {
+                    typewriterEffect(textContainer, text);
+                }, totalDelay);
+
+                // Accumulate the total delay
+                totalDelay += typingDuration + 250; // Add an additional delay after each item
+            });
+        }
+
+        // Function to create typewriter effect for a single text container
+        function typewriterEffect(textContainer, text) {
+            var characters = text.split('');
+            var charIndex = 0;
+            var typingInterval = setInterval(function () {
+                if (charIndex < characters.length) {
+                    textContainer.textContent += characters[charIndex];
+                    charIndex++;
+                } else {
+                    clearInterval(typingInterval);
+                }
+            }, 50); // Faster typing speed for the second typewriter (milliseconds)
+        }
+
+        var items = document.querySelectorAll(".timeline li");
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function callbackFunc() {
+            for (var i = 0; i < items.length; i++) {
+                if (isElementInViewport(items[i])) {
+                    if (!items[i].classList.contains("in-view")) {
+                        items[i].classList.add("in-view");
+                    }
+                } else if (items[i].classList.contains("in-view")) {
+                    items[i].classList.remove("in-view");
+                }
+            }
+        }
+
+        window.addEventListener("load", callbackFunc);
+        window.addEventListener("scroll", callbackFunc);</script>
+</body>
+
+</html>
+
+display: grid;
+position: relative;
+grid-template-columns: auto 450px;
+align-items: center;
+width: 100%;
+height: 500px;
+gap: 20%;
+
+
+
+.timeline {
+position: relative;
+max-width: 1200px;
+height: 740px;
+margin: 0 auto;
+background-color: white;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+content: '';
+position: absolute;
+width: 6px;
+height: 750px;
+background-color: black;
+top: 0;
+bottom: 0;
+left: 50%;
+margin-left: -3px;
+}
+
+.t_head {
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Container around content */
+.container {
+padding: 10px 40px;
+position: relative;
+background-color: inherit;
+width: 50%;
+border-radius: 10px;
+border: 2px solid black;
+}
+
+/* The circles on the timeline */
+.container::after {
+content: '';
+position: absolute;
+width: 25px;
+height: 25px;
+right: -17px;
+background-color: white;
+border: 4px solid black;
+top: 15px;
+border-radius: 50%;
+z-index: 1;
+}
+
+/* Place the container to the left */
+.t_left {
+left: 0;
+}
+
+/* Place the container to the right */
+.t_right {
+left: 50%;
+}
+
+.t_left .content{
+text-align: right;
+}
+
+/* Add arrows to the left container (pointing right) */
+.t_left::before {
+content: " ";
+height: 0;
+position: absolute;
+top: 22px;
+width: 0;
+z-index: 1;
+right: 30px;
+border: medium solid black;
+border-width: 10px 0 10px 10px;
+border-color: transparent transparent transparent black;
+}
+
+/* Add arrows to the right container (pointing left) */
+.t_right::before {
+content: " ";
+height: 0;
+position: absolute;
+top: 22px;
+width: 0;
+z-index: 1;
+left: 30px;
+border: medium solid black;
+border-width: 10px 10px 10px 0;
+border-color: transparent black transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.t_right::after {
+left: -16px;
+}
+
+/* The actual content */
+.content {
+padding: 20px 30px;
+position: relative;
+border-radius: 6px;
+}
+
+.container.item1 {
+background-color: #f06529; /* Yellow background */
+color: white; /* Dark text color */
+}
+
+.container.item2 {
+background-color: #2965f1; /* Green background */
+color: white; /* Light text color */
+}
+
+.container.item3 {
+background-color: #f0db4f; /* Blue background */
+}
+
+.container.item4{
+background: linear-gradient(#306998, #ffde57);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+color: white;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+
+.timeline{
+height: 800px;
+}
+/* Place the timelime to the left */
+.timeline::after {
+left: 31px;
+top: 100px;
+}
+
+/* Full-width containers */
+.container {
+width: 100%;
+padding-left: 70px;
+padding-right: 25px;
+top: 75px;
+}
+
+/* Make sure that all arrows are pointing leftwards */
+.container::before {
+left: 60px;
+border: medium solid white;
+border-width: 10px 10px 10px 0;
+border-color: transparent white transparent transparent;
+}
+
+/* Make sure all circles are at the same spot */
+.t_left::after,
+.t_right::after {
+left: 15px;
+}
+
+/* Make all right containers behave like the left ones */
+.t_right {
+left: 0%;
+}
+}
+
+
+<div class="timeline">
+    <div id="t_head">
+        <h1> Timeline of my learning</h1>
+    </div>
+    <div class="container t_left item1 active">
+        <div class="content">
+            <h3> 2022</h3>
+            <p> Started learning HTML</p>
+        </div>
+    </div>
+
+    <div class="container t_right item2">
+        <div class="content">
+            <h3> 2022</h3>
+            <p> Started learning CSS</p>
+        </div>
+    </div>
+
+    <div class="container t_left item3">
+        <div class="content">
+            <h3> 2023</h3>
+            <p> Started learning JavaScript</p>
+        </div>
+    </div>
+
+    <div class="container t_right item4">
+        <div class="content">
+            <h3> 2023</h3>
+            <p> Started learning Python</p>
+        </div>
+    </div>
+</div>
+
+.heading{
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    max-width: 1420px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nav_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 33px;
+    color: white;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.nav_links li {
+    display: inline-block;
+    position: relative;
+    margin-left: 50px;
+    color: .0087ca;
+    text-transform: uppercase;
+}
+
+.nav_links li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: whitesmoke;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav_links li a:hover {
+    color: whitesmoke;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.nav_links li:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav_links a {
+    color: gray;
+    text-decoration: none;
+}
+
+.nav_links a:hover {
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav_links {
+        display: max;
+    }
+
+    .nav_links ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav_links li {
+        margin: 5px 0;
+    }
+
+    .nav_links a:hover {
+        padding: 0;
+    }
+}
